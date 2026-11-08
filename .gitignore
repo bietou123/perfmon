@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*.log
+_shot*.png
+_win*.png
+.pytest_cache/
