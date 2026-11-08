@@ -41,6 +41,14 @@ python app.py
 
 想双击无控制台启动，用仓库里的 `run.vbs`（调用 `pythonw.exe app.py`）。
 
+## 打包单文件 exe
+
+```powershell
+.\build.ps1
+```
+
+输出 `Perfmon.exe`（约 18 MB，单文件，无控制台窗口）。脚本保持纯 ASCII：Windows PowerShell 5.1 按 ANSI/GBK 读取无 BOM 的脚本，中文会让产物名和命令串乱码。图标由 `tools\make_icon.py` 生成到 `assets\`。
+
 ## 离线验证
 
 ```powershell
@@ -59,9 +67,16 @@ web/
   style.css         深色/浅色跟随系统的界面样式
   app.js            曲线绘制、磁贴与明细渲染
 tools/
+  make_icon.py      用 Pillow 生成 assets/app.ico
   smoke_test.py     无窗口离线冒烟
+assets/             图标
+build.ps1           打包单文件 exe
 run.vbs             无控制台启动
 ```
+
+## 发布
+
+已发布的单文件版本见 [Releases](https://github.com/bietou123/perfmon/releases)；源码可以直接 `pip install -r requirements.txt` 后运行，不需要打包。
 
 ## 已知限制
 

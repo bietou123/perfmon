@@ -4,3 +4,7 @@ __pycache__/
 _shot*.png
 _win*.png
 .pytest_cache/
+build/
+dist/
+*.spec
+Perfmon.exe
